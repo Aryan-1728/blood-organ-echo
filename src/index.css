@@ -8,139 +8,89 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Medical Red & White Theme */
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Medical Red Primary */
-    --primary: 0 72% 51%; /* #D32F2F */
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 0 72% 65%;
-    --primary-glow: 0 72% 80%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Healthcare Secondary */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 15%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Emergency Colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --success: 120 60% 50%;
-    --success-foreground: 0 0% 100%;
-    
-    --warning: 45 90% 55%;
-    --warning-foreground: 0 0% 15%;
-    
-    --critical: 0 100% 50%;
-    --critical-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Status Colors */
-    --status-active: 120 60% 50%;
-    --status-pending: 45 90% 55%;
-    --status-urgent: 15 90% 55%;
-    --status-critical: 0 100% 50%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 72% 51%;
+    --radius: 0.5rem;
 
-    --radius: 0.75rem;
-
-    /* Medical Gradients */
-    --gradient-medical: linear-gradient(135deg, hsl(0 72% 51%), hsl(0 72% 40%));
-    --gradient-emergency: linear-gradient(135deg, hsl(0 100% 50%), hsl(15 90% 55%));
-    --gradient-success: linear-gradient(135deg, hsl(120 60% 50%), hsl(120 60% 40%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
-
-    /* Shadows */
-    --shadow-medical: 0 10px 30px -10px hsl(0 72% 51% / 0.3);
-    --shadow-emergency: 0 10px 30px -10px hsl(0 100% 50% / 0.4);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
-    --shadow-elevated: 0 8px 30px hsl(0 0% 0% / 0.15);
-
-    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 25%;
-    --sidebar-primary: 0 72% 51%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 95%;
-    --sidebar-accent-foreground: 0 0% 25%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 72% 51%;
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Dark Medical Theme */
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 0 72% 58%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 0 72% 70%;
-    --primary-glow: 0 72% 85%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 65%;
-    --destructive-foreground: 0 0% 100%;
-    
-    --success: 120 60% 55%;
-    --success-foreground: 0 0% 100%;
-    
-    --warning: 45 90% 60%;
-    --warning-foreground: 0 0% 15%;
-    
-    --critical: 0 100% 55%;
-    --critical-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 72% 58%;
-
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 0 72% 58%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 0 72% 58%;
-
-    /* Dark Gradients */
-    --gradient-medical: linear-gradient(135deg, hsl(0 72% 58%), hsl(0 72% 45%));
-    --gradient-emergency: linear-gradient(135deg, hsl(0 100% 55%), hsl(15 90% 60%));
-    --gradient-success: linear-gradient(135deg, hsl(120 60% 55%), hsl(120 60% 45%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 10%));
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -150,70 +100,6 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  }
-
-  /* Medical Emergency Pulse Animation */
-  @keyframes emergency-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-  }
-
-  .emergency-pulse {
-    animation: emergency-pulse 1.5s ease-in-out infinite;
-  }
-
-  /* Medical Slide In Animation */
-  @keyframes slide-in-medical {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .slide-in-medical {
-    animation: slide-in-medical 0.4s ease-out;
-  }
-
-  /* Status Indicator Animations */
-  @keyframes status-glow {
-    0%, 100% {
-      box-shadow: 0 0 5px currentColor;
-    }
-    50% {
-      box-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
-    }
-  }
-
-  .status-active {
-    animation: status-glow 2s ease-in-out infinite;
-  }
-
-  /* Medical Focus Ring */
-  .medical-focus {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-  }
-
-  /* Scrollbar Styling */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-light));
+    @apply bg-background text-foreground;
   }
 }
