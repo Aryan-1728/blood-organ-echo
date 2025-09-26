@@ -14,7 +14,321 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donor_matches: {
+        Row: {
+          ai_recommendation: string | null
+          compatibility_score: number | null
+          distance_km: number | null
+          donor_id: string
+          id: string
+          match_created_at: string | null
+          sos_request_id: string
+        }
+        Insert: {
+          ai_recommendation?: string | null
+          compatibility_score?: number | null
+          distance_km?: number | null
+          donor_id: string
+          id?: string
+          match_created_at?: string | null
+          sos_request_id: string
+        }
+        Update: {
+          ai_recommendation?: string | null
+          compatibility_score?: number | null
+          distance_km?: number | null
+          donor_id?: string
+          id?: string
+          match_created_at?: string | null
+          sos_request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donor_matches_sos_request_id_fkey"
+            columns: ["sos_request_id"]
+            isOneToOne: false
+            referencedRelation: "sos_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      donor_medical_profiles: {
+        Row: {
+          age: number
+          available_for_donation: boolean | null
+          blood_type: Database["public"]["Enums"]["blood_type"]
+          created_at: string | null
+          emergency_contact_name: string | null
+          emergency_contact_phone: string | null
+          height: number | null
+          id: string
+          last_donation_date: string | null
+          medical_conditions: string[] | null
+          medications: string[] | null
+          updated_at: string | null
+          user_id: string
+          weight: number | null
+        }
+        Insert: {
+          age: number
+          available_for_donation?: boolean | null
+          blood_type: Database["public"]["Enums"]["blood_type"]
+          created_at?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          height?: number | null
+          id?: string
+          last_donation_date?: string | null
+          medical_conditions?: string[] | null
+          medications?: string[] | null
+          updated_at?: string | null
+          user_id: string
+          weight?: number | null
+        }
+        Update: {
+          age?: number
+          available_for_donation?: boolean | null
+          blood_type?: Database["public"]["Enums"]["blood_type"]
+          created_at?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          height?: number | null
+          id?: string
+          last_donation_date?: string | null
+          medical_conditions?: string[] | null
+          medications?: string[] | null
+          updated_at?: string | null
+          user_id?: string
+          weight?: number | null
+        }
+        Relationships: []
+      }
+      inventory: {
+        Row: {
+          blood_type: Database["public"]["Enums"]["blood_type"] | null
+          collection_date: string | null
+          created_at: string | null
+          donor_id: string | null
+          expiry_date: string | null
+          id: string
+          notes: string | null
+          organ_type: Database["public"]["Enums"]["organ_type"] | null
+          provider_id: string
+          quantity: number | null
+          status: Database["public"]["Enums"]["inventory_status"] | null
+          updated_at: string | null
+        }
+        Insert: {
+          blood_type?: Database["public"]["Enums"]["blood_type"] | null
+          collection_date?: string | null
+          created_at?: string | null
+          donor_id?: string | null
+          expiry_date?: string | null
+          id?: string
+          notes?: string | null
+          organ_type?: Database["public"]["Enums"]["organ_type"] | null
+          provider_id: string
+          quantity?: number | null
+          status?: Database["public"]["Enums"]["inventory_status"] | null
+          updated_at?: string | null
+        }
+        Update: {
+          blood_type?: Database["public"]["Enums"]["blood_type"] | null
+          collection_date?: string | null
+          created_at?: string | null
+          donor_id?: string | null
+          expiry_date?: string | null
+          id?: string
+          notes?: string | null
+          organ_type?: Database["public"]["Enums"]["organ_type"] | null
+          provider_id?: string
+          quantity?: number | null
+          status?: Database["public"]["Enums"]["inventory_status"] | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string | null
+          id: string
+          message: string
+          priority: Database["public"]["Enums"]["sos_priority"] | null
+          read: boolean | null
+          sos_request_id: string | null
+          title: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          message: string
+          priority?: Database["public"]["Enums"]["sos_priority"] | null
+          read?: boolean | null
+          sos_request_id?: string | null
+          title: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          message?: string
+          priority?: Database["public"]["Enums"]["sos_priority"] | null
+          read?: boolean | null
+          sos_request_id?: string | null
+          title?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_sos_request_id_fkey"
+            columns: ["sos_request_id"]
+            isOneToOne: false
+            referencedRelation: "sos_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          address: string | null
+          created_at: string | null
+          full_name: string
+          id: string
+          latitude: number | null
+          license_number: string | null
+          longitude: number | null
+          organization_name: string | null
+          phone: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at: string | null
+          user_id: string
+          verified: boolean | null
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string | null
+          full_name: string
+          id?: string
+          latitude?: number | null
+          license_number?: string | null
+          longitude?: number | null
+          organization_name?: string | null
+          phone?: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at?: string | null
+          user_id: string
+          verified?: boolean | null
+        }
+        Update: {
+          address?: string | null
+          created_at?: string | null
+          full_name?: string
+          id?: string
+          latitude?: number | null
+          license_number?: string | null
+          longitude?: number | null
+          organization_name?: string | null
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string | null
+          user_id?: string
+          verified?: boolean | null
+        }
+        Relationships: []
+      }
+      sos_requests: {
+        Row: {
+          blood_type: Database["public"]["Enums"]["blood_type"] | null
+          contact_phone: string
+          created_at: string | null
+          description: string | null
+          id: string
+          latitude: number
+          location_name: string
+          longitude: number
+          organ_type: Database["public"]["Enums"]["organ_type"] | null
+          patient_age: number | null
+          patient_name: string
+          priority: Database["public"]["Enums"]["sos_priority"]
+          requester_id: string
+          status: Database["public"]["Enums"]["sos_status"]
+          updated_at: string | null
+        }
+        Insert: {
+          blood_type?: Database["public"]["Enums"]["blood_type"] | null
+          contact_phone: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          latitude: number
+          location_name: string
+          longitude: number
+          organ_type?: Database["public"]["Enums"]["organ_type"] | null
+          patient_age?: number | null
+          patient_name: string
+          priority?: Database["public"]["Enums"]["sos_priority"]
+          requester_id: string
+          status?: Database["public"]["Enums"]["sos_status"]
+          updated_at?: string | null
+        }
+        Update: {
+          blood_type?: Database["public"]["Enums"]["blood_type"] | null
+          contact_phone?: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          latitude?: number
+          location_name?: string
+          longitude?: number
+          organ_type?: Database["public"]["Enums"]["organ_type"] | null
+          patient_age?: number | null
+          patient_name?: string
+          priority?: Database["public"]["Enums"]["sos_priority"]
+          requester_id?: string
+          status?: Database["public"]["Enums"]["sos_status"]
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      sos_responses: {
+        Row: {
+          created_at: string | null
+          estimated_arrival: string | null
+          id: string
+          message: string | null
+          responder_id: string
+          sos_request_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          estimated_arrival?: string | null
+          id?: string
+          message?: string | null
+          responder_id: string
+          sos_request_id: string
+        }
+        Update: {
+          created_at?: string | null
+          estimated_arrival?: string | null
+          id?: string
+          message?: string | null
+          responder_id?: string
+          sos_request_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sos_responses_sos_request_id_fkey"
+            columns: ["sos_request_id"]
+            isOneToOne: false
+            referencedRelation: "sos_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +337,26 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      blood_type: "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"
+      inventory_status: "available" | "reserved" | "expired" | "used"
+      organ_type:
+        | "kidney"
+        | "liver"
+        | "heart"
+        | "lung"
+        | "pancreas"
+        | "cornea"
+        | "bone_marrow"
+        | "skin"
+        | "bone"
+      sos_priority: "low" | "medium" | "high" | "critical"
+      sos_status:
+        | "active"
+        | "acknowledged"
+        | "responding"
+        | "resolved"
+        | "cancelled"
+      user_role: "donor" | "hospital" | "blood_bank" | "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +483,29 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      blood_type: ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"],
+      inventory_status: ["available", "reserved", "expired", "used"],
+      organ_type: [
+        "kidney",
+        "liver",
+        "heart",
+        "lung",
+        "pancreas",
+        "cornea",
+        "bone_marrow",
+        "skin",
+        "bone",
+      ],
+      sos_priority: ["low", "medium", "high", "critical"],
+      sos_status: [
+        "active",
+        "acknowledged",
+        "responding",
+        "resolved",
+        "cancelled",
+      ],
+      user_role: ["donor", "hospital", "blood_bank", "admin"],
+    },
   },
 } as const
